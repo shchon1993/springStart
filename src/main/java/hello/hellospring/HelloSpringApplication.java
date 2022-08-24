@@ -1,4 +1,4 @@
-package hello.hellospring;
+package hello.hellospring; //<- 하위 패키지에 등록되어 있는 애름만 컴포넌트 스캔등록 가능하다.
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,5 +1,7 @@
 package hello.hellospring.domain;
 
+
+//비즈니스 도메인 객체 -> 회원,주문,쿠폰 등등 주로 DB에 저장하고 관리됨
 public class Member {
     private Long Id;
     private String name;

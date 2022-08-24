@@ -1,11 +1,16 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+//DB 접근, 도메인 객체 DB 에 저장하고 관리
+@Repository //스프링이 올라올때 스프링 컨테이너에 MemoryMemberRepository 객체를 생성해서 스프링에 넣어놓고 관리한다. 스프링컨테이너에서 스프링 빈이 관리된다.
 public class MemoryMemberRepository implements MemberRepository{
 
+    //Map<key,value>
     private static Map<Long, Member> store = new HashMap<>();
     private static long seq  = 0L;
 
