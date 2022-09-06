@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
+//웹 MVC의 컨트롤러 역할
 @Controller //스프링 컨테이너가 뜰 때  MemberController 객체를 생성해서 스프링에 넣어놓고 관리한다. 스프링컨테이너에서 스프링 빈이 관리된다.
 public class MemberController {
 
