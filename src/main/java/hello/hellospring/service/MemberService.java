@@ -4,12 +4,14 @@ import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 //핵심 비즈니스 로직
 //@Service //스프링이 올라올때 스프링 컨테이너에 MemberService 객체를 생성해서 스프링에 넣어놓고 관리한다. 스프링컨테이너에서 스프링 빈이 관리된다.
+@Transactional
 public class MemberService {
     //private final MemberRepository memberRepository = new MemoryMemberRepository(); //test에서 생성한거랑 다른 인스턴스임
     private final MemberRepository memberRepository;
@@ -31,8 +33,6 @@ public class MemberService {
             throw new IllegalStateException("이미 존재하는 회원입니다");
         });*/
         validateDuplicateMember(member); //메서드 생성 ctrl + alt + M
-
-
         memberRepository.save(member);
         return member.getId();
     }
